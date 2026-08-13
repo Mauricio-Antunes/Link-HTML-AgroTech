@@ -1,267 +1,362 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AgroTech | Agricultura do Futuro</title>
+<title>AgroTech | Meu Blog sobre Tecnologia no Agro</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Poppins,sans-serif;
-background:#04131c;
-color:white;
-overflow-x:hidden;
+    font-family:Poppins,sans-serif;
+    background:#04131c;
+    color:white;
+    overflow-x:hidden;
 }
 
+/* FUNDO */
+
 body::before{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at top,#00ff9940,transparent 35%),
-radial-gradient(circle at bottom,#00bfff30,transparent 40%);
-z-index:-2;
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top,#00ff9940,transparent 35%),
+    radial-gradient(circle at bottom,#00bfff30,transparent 40%);
+    z-index:-2;
 }
 
 body::after{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background-image:
-linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-background-size:40px 40px;
-z-index:-1;
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
 }
 
+/* MENU */
+
 header{
-
-position:fixed;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(15px);
-border-bottom:1px solid #00ff9950;
-z-index:1000;
-
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #00ff9950;
+    z-index:1000;
 }
 
 .logo{
+    font-size:30px;
+    font-family:Orbitron;
+    color:#00ff99;
+    text-shadow:0 0 20px #00ff99;
+}
 
-font-size:35px;
-font-family:Orbitron;
-color:#00ff99;
-text-shadow:0 0 20px #00ff99;
-
+.logo span{
+    color:white;
 }
 
 nav a{
-
-color:white;
-text-decoration:none;
-margin-left:25px;
-transition:.3s;
-
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
 }
 
 nav a:hover{
-
-color:#00ff99;
-
+    color:#00ff99;
 }
 
+/* APRESENTAÇÃO */
+
 .hero{
-
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-flex-direction:column;
-padding:20px;
-
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    padding:120px 20px 60px;
 }
 
 .hero h1{
+    font-size:65px;
+    font-family:Orbitron;
+    color:#00ff99;
+    text-shadow:0 0 20px #00ff99;
+}
 
-font-size:70px;
-font-family:Orbitron;
-color:#00ff99;
-text-shadow:0 0 20px #00ff99;
-
+.hero h2{
+    margin-top:15px;
+    font-size:25px;
+    color:#00c3ff;
 }
 
 .hero p{
-
-font-size:20px;
-margin-top:20px;
-max-width:800px;
-color:#ddd;
-line-height:1.8;
-
+    font-size:18px;
+    margin-top:20px;
+    max-width:750px;
+    color:#ddd;
+    line-height:1.8;
 }
 
 .botao{
-
-display:inline-block;
-margin-top:40px;
-padding:18px 45px;
-border-radius:50px;
-background:linear-gradient(45deg,#00ff99,#00c3ff);
-color:#000;
-font-weight:bold;
-text-decoration:none;
-transition:.4s;
-
+    display:inline-block;
+    margin-top:35px;
+    padding:16px 40px;
+    border-radius:50px;
+    background:linear-gradient(45deg,#00ff99,#00c3ff);
+    color:#000;
+    font-weight:bold;
+    text-decoration:none;
+    transition:.4s;
 }
 
 .botao:hover{
-
-transform:scale(1.08);
-box-shadow:0 0 30px #00ff99;
-
+    transform:scale(1.08);
+    box-shadow:0 0 30px #00ff99;
 }
 
+/* SEÇÕES */
+
 section{
-
-padding:100px 8%;
-
+    padding:100px 8%;
 }
 
 .titulo{
-
-text-align:center;
-font-family:Orbitron;
-font-size:45px;
-margin-bottom:60px;
-color:#00ff99;
-
+    text-align:center;
+    font-family:Orbitron;
+    font-size:42px;
+    margin-bottom:20px;
+    color:#00ff99;
 }
 
-.cards{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:35px;
-
+.subtitulo{
+    text-align:center;
+    color:#aaa;
+    max-width:700px;
+    margin:0 auto 60px;
+    line-height:1.7;
 }
 
-.card{
+/* SOBRE MIM */
 
-background:rgba(255,255,255,.05);
-border:1px solid rgba(0,255,153,.25);
-border-radius:20px;
-overflow:hidden;
-transition:.4s;
-backdrop-filter:blur(10px);
-
+.sobre{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
 }
 
-.card:hover{
-
-transform:translateY(-10px);
-box-shadow:0 0 30px #00ff9955;
-
+.sobre-texto{
+    background:rgba(255,255,255,.05);
+    padding:35px;
+    border-radius:20px;
+    border:1px solid rgba(0,255,153,.25);
 }
 
-.card img{
-
-width:100%;
-height:250px;
-object-fit:cover;
-transition:.5s;
-
+.sobre-texto h3{
+    color:#00ff99;
+    font-family:Orbitron;
+    margin-bottom:20px;
 }
 
-.card:hover img{
-
-transform:scale(1.08);
-
+.sobre-texto p{
+    color:#ddd;
+    line-height:1.9;
 }
 
-.card h3{
-
-padding:20px;
-color:#00ff99;
-
+.destaque{
+    color:#00ff99;
+    font-weight:bold;
 }
 
-.card p{
+/* POSTS */
 
-padding:0 20px 25px;
-color:#ddd;
-line-height:1.8;
-
+.posts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
-.numeros{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:70px;
-
+.post{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(0,255,153,.25);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+    backdrop-filter:blur(10px);
 }
 
-.numero{
-
-background:#081e2a;
-padding:30px;
-border-radius:20px;
-text-align:center;
-border:1px solid #00ff9950;
-
+.post:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px #00ff9955;
 }
 
-.numero h2{
-
-font-size:50px;
-color:#00ff99;
-
+.post img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
 }
 
-.autor{
-
-margin-top:80px;
-padding:40px;
-text-align:center;
-border-radius:20px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(0,255,153,.3);
-
+.post:hover img{
+    transform:scale(1.05);
 }
 
-.autor h2{
-
-font-family:Orbitron;
-color:#00ff99;
-margin-bottom:15px;
-
+.post-conteudo{
+    padding:25px;
 }
+
+.post-conteudo h3{
+    color:#00ff99;
+    margin-bottom:12px;
+    font-size:21px;
+}
+
+.post-conteudo p{
+    color:#ccc;
+    line-height:1.7;
+}
+
+.data{
+    color:#00c3ff;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+/* TECNOLOGIAS */
+
+.tecnologias{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.tecnologia{
+    padding:30px;
+    background:#081e2a;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid #00ff9950;
+    transition:.3s;
+}
+
+.tecnologia:hover{
+    transform:translateY(-7px);
+    box-shadow:0 0 20px #00ff9935;
+}
+
+.icone{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.tecnologia h3{
+    color:#00ff99;
+    margin-bottom:10px;
+}
+
+.tecnologia p{
+    color:#bbb;
+    line-height:1.6;
+}
+
+/* MINHA OPINIÃO */
+
+.opiniao{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    padding:40px;
+    border-radius:20px;
+    border-left:4px solid #00ff99;
+}
+
+.opiniao h3{
+    color:#00ff99;
+    font-family:Orbitron;
+    margin-bottom:20px;
+}
+
+.opiniao p{
+    color:#ddd;
+    line-height:1.9;
+}
+
+/* FOOTER */
 
 footer{
+    padding:35px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#aaa;
+}
 
-padding:30px;
-text-align:center;
-margin-top:80px;
-border-top:1px solid rgba(255,255,255,.1);
-color:#aaa;
+footer strong{
+    color:#00ff99;
+}
+
+/* CELULAR */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:15px;
+    }
+
+    .logo{
+        font-size:25px;
+    }
+
+    nav a{
+        margin:0 8px;
+        font-size:14px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .titulo{
+        font-size:32px;
+    }
+
+    .sobre{
+        grid-template-columns:1fr;
+    }
 
 }
 
@@ -269,141 +364,354 @@ color:#aaa;
 
 </head>
 
+
 <body>
+
+
+<!-- MENU -->
 
 <header>
 
 <div class="logo">
-AgroTech
+Agro<span>Tech</span>
 </div>
 
 <nav>
 
-<a href="#">Início</a>
-<a href="#tecnologia">Tecnologias</a>
-<a href="#sobre">Sobre</a>
+<a href="#inicio">Início</a>
+
+<a href="#sobre">Sobre Mim</a>
+
+<a href="#posts">Posts</a>
+
+<a href="#tecnologias">Tecnologias</a>
 
 </nav>
 
 </header>
 
-<section class="hero">
+
+<!-- INÍCIO -->
+
+<section class="hero" id="inicio">
 
 <h1>AGROTECH</h1>
 
+<h2>Meu blog sobre tecnologia no agronegócio</h2>
+
 <p>
 
-A tecnologia está transformando o agronegócio.
-Inteligência Artificial, drones, sensores inteligentes e agricultura de precisão
-levam mais produtividade, sustentabilidade e inovação ao campo.
+Olá! Eu sou Mauricio e criei este espaço para compartilhar
+o que estou aprendendo e descobrindo sobre tecnologia,
+agricultura e inovação no campo.
 
 </p>
 
-<a href="#tecnologia" class="botao">
-Conhecer Tecnologias
+<a href="#posts" class="botao">
+Ver meus posts
 </a>
 
 </section>
 
-<section id="tecnologia">
 
-<h2 class="titulo">
-Tecnologias do Futuro
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<img src="drone.png" alt="Drone Agrícola">
-
-<h3>🚁 Drones Agrícolas</h3>
-
-<p>
-
-Monitoramento aéreo, pulverização inteligente, mapeamento das plantações e
-identificação de pragas utilizando tecnologia de ponta.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80">
-
-<h3>🤖 Inteligência Artificial</h3>
-
-<p>
-
-Algoritmos analisam dados do clima, solo e produtividade para aumentar
-a eficiência e reduzir desperdícios.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80">
-
-<h3>🌱 Sustentabilidade</h3>
-
-<p>
-
-Tecnologias voltadas para economia de água, redução de defensivos
-e preservação ambiental.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="numeros">
-
-<div class="numero">
-<h2>98%</h2>
-<p>Precisão no Monitoramento</p>
-</div>
-
-<div class="numero">
-<h2>45%</h2>
-<p>Economia de Recursos</p>
-</div>
-
-<div class="numero">
-<h2>24h</h2>
-<p>Monitoramento Inteligente</p>
-</div>
-
-<div class="numero">
-<h2>100%</h2>
-<p>Inovação</p>
-</div>
-
-</div>
-
-</section>
+<!-- SOBRE MIM -->
 
 <section id="sobre">
 
 <h2 class="titulo">
-
-Sobre o Projeto
-
+Sobre Mim
 </h2>
 
-<div class="autor">
+<p class="subtitulo">
 
-<h2>Mauricio Antunes</h2>
+Um pouco sobre quem está por trás deste blog.
+
+</p>
+
+<div class="sobre">
+
+<div class="sobre-texto">
+
+<h3>👨‍💻 Quem sou eu?</h3>
 
 <p>
 
-Projeto desenvolvido para demonstrar uma plataforma futurista voltada ao agronegócio,
-integrando agricultura de precisão, inteligência artificial, drones e sustentabilidade.
-A AgroTech busca unir inovação e tecnologia para tornar o campo mais eficiente,
-produtivo e conectado.
+Meu nome é <span class="destaque">Mauricio Antunes</span>.
+
+Criei este blog como um espaço para estudar,
+pesquisar e compartilhar ideias sobre a relação
+entre tecnologia e agronegócio.
+
+</p>
+
+</div>
+
+
+<div class="sobre-texto">
+
+<h3>🌱 Por que AgroTech?</h3>
+
+<p>
+
+Sempre achei interessante como novas tecnologias
+podem mudar a maneira como o trabalho é realizado
+no campo.
+
+Aqui pretendo falar sobre drones agrícolas,
+inteligência artificial, sensores, agricultura
+de precisão e outras novidades.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- POSTS -->
+
+<section id="posts">
+
+<h2 class="titulo">
+Meus Posts
+</h2>
+
+<p class="subtitulo">
+
+Aqui estão alguns assuntos que estou estudando
+e que quero compartilhar por aqui.
+
+</p>
+
+
+<div class="posts">
+
+
+<!-- POST 1 -->
+
+<div class="post">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/DJI_Agras_T50_demonstrating_sprayers_in_flight.jpg"
+alt="Drone agrícola"
+>
+
+<div class="post-conteudo">
+
+<div class="data">
+📅 Tecnologia no campo
+</div>
+
+<h3>
+🚁 Como os drones estão mudando o agronegócio
+</h3>
+
+<p>
+
+Os drones agrícolas podem ajudar no monitoramento
+das plantações, pulverização e identificação
+de problemas nas lavouras.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- POST 2 -->
+
+<div class="post">
+
+<img
+src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80"
+alt="Agricultura e tecnologia"
+>
+
+<div class="post-conteudo">
+
+<div class="data">
+📅 Agricultura de precisão
+</div>
+
+<h3>
+🤖 Inteligência Artificial no campo
+</h3>
+
+<p>
+
+A inteligência artificial pode analisar grandes
+quantidades de dados e ajudar agricultores a
+tomarem decisões mais precisas.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- POST 3 -->
+
+<div class="post">
+
+<img
+src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+alt="Agricultura sustentável"
+>
+
+<div class="post-conteudo">
+
+<div class="data">
+📅 Sustentabilidade
+</div>
+
+<h3>
+🌱 Tecnologia e agricultura sustentável
+</h3>
+
+<p>
+
+Novas tecnologias também podem contribuir para
+economizar água, reduzir desperdícios e utilizar
+os recursos naturais de maneira mais eficiente.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TECNOLOGIAS -->
+
+<section id="tecnologias">
+
+<h2 class="titulo">
+Tecnologias que estou estudando
+</h2>
+
+<p class="subtitulo">
+
+Algumas das tecnologias que mais chamam minha atenção
+quando penso no futuro do agronegócio.
+
+</p>
+
+
+<div class="tecnologias">
+
+
+<div class="tecnologia">
+
+<div class="icone">
+🚁
+</div>
+
+<h3>Drones</h3>
+
+<p>
+
+Monitoramento, mapeamento e pulverização
+de plantações.
+
+</p>
+
+</div>
+
+
+<div class="tecnologia">
+
+<div class="icone">
+🤖
+</div>
+
+<h3>Inteligência Artificial</h3>
+
+<p>
+
+Análise de dados e auxílio na tomada
+de decisões.
+
+</p>
+
+</div>
+
+
+<div class="tecnologia">
+
+<div class="icone">
+📡
+</div>
+
+<h3>Sensores</h3>
+
+<p>
+
+Coleta de informações sobre solo,
+clima e plantações.
+
+</p>
+
+</div>
+
+
+<div class="tecnologia">
+
+<div class="icone">
+🌱
+</div>
+
+<h3>Agricultura de Precisão</h3>
+
+<p>
+
+Tecnologia para tornar o uso dos
+recursos mais eficiente.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- MINHA OPINIÃO -->
+
+<section>
+
+<h2 class="titulo">
+Minha Visão
+</h2>
+
+<p class="subtitulo">
+Por que eu acho esse assunto interessante?
+</p>
+
+<div class="opiniao">
+
+<h3>💡 Tecnologia + Campo</h3>
+
+<p>
+
+Na minha opinião, o futuro do agronegócio vai estar
+cada vez mais ligado à tecnologia.
+
+Não significa substituir as pessoas, mas utilizar
+ferramentas melhores para facilitar o trabalho,
+diminuir desperdícios e aumentar a eficiência.
+
+É justamente essa relação entre tecnologia,
+inovação e agricultura que quero explorar neste blog.
 
 </p>
 
@@ -411,11 +719,22 @@ produtivo e conectado.
 
 </section>
 
+
+<!-- RODAPÉ -->
+
 <footer>
 
-© 2026 AgroTech • Desenvolvido por <strong>Mauricio Antunes</strong>
+<p>
+© 2026 AgroTech
+</p>
+
+<p>
+Blog pessoal de <strong>Mauricio Antunes</strong>
+</p>
 
 </footer>
 
+
 </body>
+
 </html>
